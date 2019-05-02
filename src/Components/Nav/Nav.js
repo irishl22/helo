@@ -5,7 +5,20 @@ import { withRouter } from 'react-router-dom'
 import { getData } from './../../ducks/reducer'
 
 class Nav extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+
+    }
+  }
+
+  componentDidMount() {
+    this.props.getData()
+  }
+
+
   render() {
+    console.log(this.props.user)
     return (
       <div>
           <Link to='/dashboard'>Home</Link>
