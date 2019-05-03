@@ -35,10 +35,16 @@ module.exports = {
             userData: req.session.user,
             loggedIn: true
         })
-        console.log(req.session.user)
     },
     userData: (req, res) => {
         if(req.session.user) res.status(200).send(req.session.user)
         else res.status(401).send('Please Login')
+    },
+    readPosts: async (req, res) => {
+        const { id } = req.params
+        const db = req.app.get('db')
+        let response = await
+        db.get_posts([id])
+        return res.status(200).send(response)
     }
 }

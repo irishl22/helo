@@ -28,5 +28,8 @@ app.post('/api/login', ctrl.login)
 app.post('/api/register', ctrl.register)
 app.get('/auth/user-data', ctrl.userData)
 
+//// POST ENDPOINTS //////
+app.get('/api/posts', ctrl.readPosts)
+
 
 // app.post('/api/logout', ctrl.logout)

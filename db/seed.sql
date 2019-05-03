@@ -14,3 +14,12 @@ create table posts (
 );
 
 ALTER TABLE posts ADD CONSTRAINT display_fk0 FOREIGN KEY (author_id) REFERENCES users(id);
+
+
+-- get posts call
+select 
+p.title,
+u.username,
+u.profile_pic
+from posts p
+join users u on u.id = p.author_id

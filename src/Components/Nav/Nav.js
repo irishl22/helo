@@ -26,6 +26,7 @@ class Nav extends Component {
           <Link to='/dashboard'>Home</Link>
           <Link to='/new'>New Post</Link>
           <Link to='/'>Logout</Link>
+          {this.props.user.username}
       </div>
     )
   }
