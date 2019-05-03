@@ -18,8 +18,8 @@ massive(CONNECTION_STRING).then(db => {
 app.use(express.json());
 app.use(session({
     secret: SESSION_SECRET,
-    resave: true,
-    saveUninitialized: true,
+    resave: false,
+    saveUninitialized: false,
     cookie: {maxAge: 100000000 }
 })) 
 

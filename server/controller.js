@@ -17,6 +17,7 @@ module.exports = {
             message: 'Login successful',
             loggedIn: true
         })
+        console.log(req.session.user)
     },
     register: async (req, res) => {
         const { username, password } = req.body;
@@ -34,10 +35,10 @@ module.exports = {
             userData: req.session.user,
             loggedIn: true
         })
+        console.log(req.session.user)
     },
     userData: (req, res) => {
         if(req.session.user) res.status(200).send(req.session.user)
         else res.status(401).send('Please Login')
-        console.log(req.session.user)
     }
 }

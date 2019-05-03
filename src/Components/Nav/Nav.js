@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom'
 import { getData } from './../../ducks/reducer'
 
@@ -18,8 +18,10 @@ class Nav extends Component {
 
 
   render() {
-    console.log(this.props.user)
-    return (
+    return this.props.location.pathname === "/" ? (
+      <div>
+      </div>
+    ) : (
       <div>
           <Link to='/dashboard'>Home</Link>
           <Link to='/new'>New Post</Link>
